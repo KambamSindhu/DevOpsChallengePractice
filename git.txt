@@ -1,0 +1,589 @@
+DAY 1
+Git Fundamentals pract
+
+[root@centos ~]# ls
+agent                    docker        my-appabc
+anaconda-ks.cfg          Dockerfile    run-docker.sh
+app                      edureka       run.sh
+bin                      env.sh        settings.xml
+com.vogella.maven.first  externals     sonarqube-9.4.0.54424.zip
+config.sh                jfrog         tmp.txt
+demoterraform            license.html  vsts-agent-linux-x64-3.218.0.tar.gz
+devops                   my-app        vsts-agent-linux-x64-3.218.0.tar.gz.1
+[root@centos ~]# mkdir project
+[root@centos ~]# cd project/
+[root@centos project]# git init
+hint: Using 'master' as the name for the initial branch. This default branch nam                                                                             e
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /root/project/.git/
+[root@centos project]# ls -a
+.  ..  .git
+[root@centos project]# cd .git
+[root@centos .git]# ls
+branches  config  description  HEAD  hooks  info  objects  refs
+[root@centos .git]# touch names.txt
+[root@centos .git]# git status
+fatal: this operation must be run in a work tree
+[root@centos .git]# git add .
+fatal: this operation must be run in a work tree
+[root@centos .git]# cd ..
+[root@centos project]# git add .
+[root@centos project]# git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+[root@centos project]# git commit -m "first commit"
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+[root@centos project]# git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+[root@centos project]# ls
+[root@centos project]# mkdir first.txt
+[root@centos project]# rm -rf first.txt/
+[root@centos project]# touch first.txt
+[root@centos project]# ls
+first.txt
+[root@centos project]# git add .
+[root@centos project]# git commit -m "first commit"
+[master (root-commit) e24ba9c] first commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 first.txt
+[root@centos project]# git status
+On branch master
+nothing to commit, working tree clean
+[root@centos project]# git restore --staged first.txt
+[root@centos project]# git status
+On branch master
+nothing to commit, working tree clean
+[root@centos project]# touch second.txt
+[root@centos project]# git add .
+[root@centos project]# git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   second.txt
+
+[root@centos project]# git restore --staged second.txt
+[root@centos project]# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        second.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@centos project]# git log
+commit e24ba9c07e51d49b0c26a2ca0bf95f8f9cc99af2 (HEAD -> master)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Wed Jul 26 10:43:41 2023 -0400
+
+    first commit
+[root@centos project]# git commit -m "first commit"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        second.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@centos project]# git commit -m "second commit"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        second.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@centos project]# git add .
+[root@centos project]# git commit -m "first commit"
+[master 8145bfe] first commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 second.txt
+[root@centos project]# rm -rf names.txt
+[root@centos project]# ls
+first.txt  second.txt
+[root@centos project]# rm -rf first.txt
+[root@centos project]# git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    first.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[root@centos project]# git add .
+[root@centos project]# git commit -m "deleted first.txt"
+[master e1d9eb9] deleted first.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 first.txt
+[root@centos project]# ls
+second.txt
+[root@centos project]# git status
+On branch master
+nothing to commit, working tree clean
+[root@centos project]# git log
+commit e1d9eb9c2c8e506c5aa33ad92c2b5d3b960b07c6 (HEAD -> master)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Wed Jul 26 10:49:06 2023 -0400
+
+    deleted first.txt
+
+commit 8145bfeb94db1a577e3a179f7b289fb60b7015b0
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Wed Jul 26 10:47:58 2023 -0400
+
+    first commit
+
+commit e24ba9c07e51d49b0c26a2ca0bf95f8f9cc99af2
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Wed Jul 26 10:43:41 2023 -0400
+
+    first commit
+[root@centos project]# git reset e1d9eb9c2c8e506c5aa33ad92c2b5d3b960b07c6
+[root@centos project]# git log
+commit e1d9eb9c2c8e506c5aa33ad92c2b5d3b960b07c6 (HEAD -> master)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Wed Jul 26 10:49:06 2023 -0400
+
+    deleted first.txt
+
+commit 8145bfeb94db1a577e3a179f7b289fb60b7015b0
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Wed Jul 26 10:47:58 2023 -0400
+
+    first commit
+
+commit e24ba9c07e51d49b0c26a2ca0bf95f8f9cc99af2
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Wed Jul 26 10:43:41 2023 -0400
+
+    first commit
+[root@centos project]# git reset e24ba9c07e51d49b0c26a2ca0bf95f8f9cc99af2
+Unstaged changes after reset:
+D       first.txt
+[root@centos project]# git log
+commit e24ba9c07e51d49b0c26a2ca0bf95f8f9cc99af2 (HEAD -> master)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Wed Jul 26 10:43:41 2023 -0400
+
+    first commit
+[root@centos project]# git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    first.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        second.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[root@centos project]# git stash
+Saved working directory and index state WIP on master: e24ba9c first commit
+[root@centos project]# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        second.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@centos project]# git stash
+No local changes to save
+[root@centos project]# git add .
+[root@centos project]# git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   second.txt
+
+[root@centos project]# git stash
+Saved working directory and index state WIP on master: e24ba9c first commit
+[root@centos project]# git log
+commit e24ba9c07e51d49b0c26a2ca0bf95f8f9cc99af2 (HEAD -> master)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Wed Jul 26 10:43:41 2023 -0400
+
+    first commit
+[root@centos project]# git stash pop
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   second.txt
+
+Dropped refs/stash@{0} (e81adc084fdbbfd666688d77c6139a18569ac805)
+[root@centos project]# git stash
+Saved working directory and index state WIP on master: e24ba9c first commit
+[root@centos project]# git status
+On branch master
+nothing to commit, working tree clean
+[root@centos project]# ls
+first.txt
+[root@centos project]# touch second.txt
+[root@centos project]# git add .
+[root@centos project]# git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   second.txt
+
+[root@centos project]# git stash
+Saved working directory and index state WIP on master: e24ba9c first commit
+[root@centos project]# git status
+On branch master
+nothing to commit, working tree clean
+[root@centos project]# git stash pop
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   second.txt
+
+Dropped refs/stash@{0} (01d39e40579c04eeeb6285b540a20b98c1459fd6)
+[root@centos project]# ls
+first.txt  second.txt
+[root@centos project]# git stash
+Saved working directory and index state WIP on master: e24ba9c first commit
+[root@centos project]# ls
+first.txt
+[root@centos project]# git stash clear
+[root@centos project]# git stash pop
+No stash entries found.
+
+
+[root@centos project]# ls
+example2.txt  example.txt  FETCH_HEAD  first.txt
+[root@centos project]# touch hotel.txt
+[root@centos project]# git add .
+[root@centos project]# git commit -m "hotel.txt"
+[master 9d963fc] hotel.txt
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 FETCH_HEAD
+ create mode 100644 hotel.txt
+[root@centos project]# touch roll.txt
+[root@centos project]# git add .
+[root@centos project]# git commit -m "hotel.txt"
+[master 461f5bd] hotel.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 roll.txt
+[root@centos project]# git log
+commit 461f5bd5e2cb6bbedf73a317fdc67140e4389452 (HEAD -> master)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 04:58:45 2023 -0400
+
+    hotel.txt
+
+commit 9d963fcdf69d18f0409e01d67c2c7709602c2e1e
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 04:58:31 2023 -0400
+
+    hotel.txt
+
+commit 461f5bd5e2cb6bbedf73a317fdc67140e4389452 (HEAD -> master)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 04:58:45 2023 -0400
+
+    hotel.txt
+
+commit 9d963fcdf69d18f0409e01d67c2c7709602c2e1e
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 04:58:31 2023 -0400
+
+    hotel.txt
+
+commit c8fd87a2bbbc0eab4353758a5a81b605feaa3345 (origin/master)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Wed Jul 26 10:43:41 2023 -0400
+
+    first commit
+
+commit 48512062a3bfa1248abd1a5d6d57ba483ace76a0
+Author: KambamSindhu <107462402+KambamSindhu@users.noreply.github.com>
+Date:   Sun Jul 23 14:23:45 2023 +0530
+
+    Update example2.txt
+[root@centos project]# !
+[root@centos project]# git branch
+* master
+[root@centos project]# git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 500 bytes | 500.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/KambamSindhu/DevOpsPractice.git
+   c8fd87a..461f5bd  master -> master
+[root@centos project]# git checkout -b sindhu
+Switched to a new branch 'sindhu'
+[root@centos project]# vi first.txt
+[root@centos project]# git add .
+[root@centos project]# git status
+On branch sindhu
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   first.txt
+
+[root@centos project]# git commit -m "made changes to first.txt"
+[sindhu 1f4bdb2] made changes to first.txt
+ 1 file changed, 1 insertion(+)
+[root@centos project]# git status
+On branch sindhu
+nothing to commit, working tree clean
+[root@centos project]# git log
+commit 1f4bdb21a86b47cd77b31784047d73afcc0183e5 (HEAD -> sindhu)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 05:09:16 2023 -0400
+
+    made changes to first.txt
+
+commit 461f5bd5e2cb6bbedf73a317fdc67140e4389452 (origin/master, master)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 04:58:45 2023 -0400
+
+    hotel.txt
+
+commit 9d963fcdf69d18f0409e01d67c2c7709602c2e1e
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 04:58:31 2023 -0400
+
+    hotel.txt
+
+commit c8fd87a2bbbc0eab4353758a5a81b605feaa3345
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Wed Jul 26 10:43:41 2023 -0400
+
+    first commit
+
+commit 48512062a3bfa1248abd1a5d6d57ba483ace76a0
+Author: KambamSindhu <107462402+KambamSindhu@users.noreply.github.com>
+Date:   Sun Jul 23 14:23:45 2023 +0530
+
+    Update example2.txt
+
+commit 91b8af8bf3c94f36fa123acba478a88b31a71150
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Sun Jul 23 04:52:07 2023 -0400
+
+    second commit
+
+commit 57cec54464a149d0121049545ee2ee83b05a573c
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Sat Jul 22 12:54:18 2023 -0400
+
+    first commit
+...skipping...
+
+                   SUMMARY OF LESS COMMANDS
+
+      Commands marked with * may be preceded by a number, N.
+      Notes in parentheses indicate the behavior if N is given.
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.
+
+  h  H                 Display this help.
+  q  :q  Q  :Q  ZZ     Exit.
+ ---------------------------------------------------------------------------
+
+                           MOVING
+
+  e  ^E  j  ^N  CR  *  Forward  one line   (or N lines).
+  y  ^Y  k  ^K  ^P  *  Backward one line   (or N lines).
+  f  ^F  ^V  SPACE  *  Forward  one window (or N lines).
+  b  ^B  ESC-v      *  Backward one window (or N lines).
+  z                 *  Forward  one window (and set window to N).
+  w                 *  Backward one window (and set window to N).
+  ESC-SPACE         *  Forward  one window, but don't stop at end-of-file.
+  d  ^D             *  Forward  one half-window (and set half-window to N).
+  u  ^U             *  Backward one half-window (and set half-window to N).
+  ESC-)  RightArrow *  Left  one half screen width (or N positions).
+ :q...skipping...
+commit c8fd87a2bbbc0eab4353758a5a81b605feaa3345
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Wed Jul 26 10:43:41 2023 -0400
+
+    first commit
+
+commit 48512062a3bfa1248abd1a5d6d57ba483ace76a0
+Author: KambamSindhu <107462402+KambamSindhu@users.noreply.github.com>
+Date:   Sun Jul 23 14:23:45 2023 +0530
+
+    Update example2.txt
+
+commit 91b8af8bf3c94f36fa123acba478a88b31a71150
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Sun Jul 23 04:52:07 2023 -0400
+
+    second commit
+
+commit 57cec54464a149d0121049545ee2ee83b05a573c
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Sat Jul 22 12:54:18 2023 -0400
+
+    first commit
+[root@centos project]# git branch
+  master
+* sindhu
+[root@centos project]# git push origin sindhu
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 307 bytes | 307.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'sindhu' on GitHub by visiting:
+remote:      https://github.com/KambamSindhu/DevOpsPractice/pull/new/sindhu
+remote:
+To https://github.com/KambamSindhu/DevOpsPractice.git
+ * [new branch]      sindhu -> sindhu
+[root@centos project]# touch sddf.txt
+[root@centos project]# git add .
+[root@centos project]# git commit -m "added sddf.txt"
+[sindhu db00697] added sddf.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 sddf.txt
+[root@centos project]# git push origin sindhu
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 244 bytes | 244.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/KambamSindhu/DevOpsPractice.git
+   1f4bdb2..db00697  sindhu -> sindhu
+[root@centos project]# ls
+example2.txt  example.txt  FETCH_HEAD  first.txt  hotel.txt  roll.txt  sddf.txt
+[root@centos project]# touch 1
+[root@centos project]# git add .; git commit -m "1"
+[sindhu ea8aa9d] 1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 1
+[root@centos project]# touch 2
+[root@centos project]# git add .; git commit -m "2"
+[sindhu 43d3faa] 2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 2
+[root@centos project]# touch 2
+[root@centos project]# git add .; git commit -m "3"
+On branch sindhu
+nothing to commit, working tree clean
+[root@centos project]# ls
+1  example2.txt  FETCH_HEAD  hotel.txt  sddf.txt
+2  example.txt   first.txt   roll.txt
+[root@centos project]# touch 3
+[root@centos project]# git add .; git commit -m "3"
+[sindhu 575841c] 3
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 3
+[root@centos project]# git log
+commit 575841c4ec1684db71a55b2dcaf4627df0409aed (HEAD -> sindhu)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 05:32:20 2023 -0400
+
+    3
+
+commit 43d3faa822e79f8a6fd17d9ecee3560b4ceee830
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 05:32:00 2023 -0400
+
+    2
+
+commit ea8aa9df81d31c07c117ed31de66e2baad7aec4d
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 05:31:53 2023 -0400
+
+    1
+
+commit db006971b635b39e0665cfa2d60e1dc86ad6670c (origin/sindhu)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 05:19:35 2023 -0400
+
+    added sddf.txt
+[root@centos project]# git rebase db006971b635b39e0665cfa2d60e1dc86ad6670c
+Current branch sindhu is up to date.
+[root@centos project]# git rebase -i  db006971b635b39e0665cfa2d60e1dc86ad6670c
+Successfully rebased and updated refs/heads/sindhu.
+[root@centos project]# git rebase db006971b635b39e0665cfa2d60e1dc86ad6670c
+Current branch sindhu is up to date.
+[root@centos project]# git rebase -i  db006971b635b39e0665cfa2d60e1dc86ad6670c
+[detached HEAD 02eee9b] 1
+ Date: Thu Jul 27 05:31:53 2023 -0400
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 1
+ create mode 100644 2
+ create mode 100644 3
+Successfully rebased and updated refs/heads/sindhu.
+[root@centos project]# git log
+commit 02eee9b5b9cf09426fb51dad68916f8e6a742400 (HEAD -> sindhu)
+commit 02eee9b5b9cf09426fb51dad68916f8e6a742400 (HEAD -> sindhu)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 05:31:53 2023 -0400
+
+    1
+
+    2
+
+    3
+
+commit db006971b635b39e0665cfa2d60e1dc86ad6670c (origin/sindhu)
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 05:19:35 2023 -0400
+
+    added sddf.txt
+
+commit 1f4bdb21a86b47cd77b31784047d73afcc0183e5
+Author: KambamSindhu <kambamsindhu2001@gmail.com>
+Date:   Thu Jul 27 05:09:16 2023 -0400
+
+    made changes to first.txt
+
+commit 461f5bd5e2cb6bbedf73a317fdc67140e4389452 (origin/master, master)
+[root@centos project]#
+[root@centos project]# git branch
+  master
+* sindhu
+[root@centos project]# ls
+1  3             example.txt  first.txt  roll.txt
+2  example2.txt  FETCH_HEAD   hotel.txt  sddf.txt
+[root@centos project]# git pull origin master
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (5/5), 1.90 KiB | 1.90 MiB/s, done.
+From https://github.com/KambamSindhu/DevOpsPractice
+ * branch            master     -> FETCH_HEAD
+   461f5bd..2042ee3  master     -> origin/master
+Successfully rebased and updated refs/heads/sindhu.
+[root@centos project]# ls
+1  3             example.txt  first.txt  roll.txt
+2  example2.txt  FETCH_HEAD   hotel.txt  sddf.txt
+[root@centos project]# vi example2.txt
+[root@centos project]# git push origin sindhu
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 245 bytes | 245.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/KambamSindhu/DevOpsPractice.git
+   db00697..9b879ef  sindhu -> sindhu
+[root@centos project]# cat example2.txt
+fghjmegshjm,wefargthm
+zvccxvassdfdghb
+hey i added this :)))
+
+
