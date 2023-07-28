@@ -1,0 +1,376 @@
+
+
+//Missed taking the scrren shot
+ 939  vi example2.txt
+  940  cat example2.txt
+  941  cd
+  942  ls
+  943  mkdir DevopsDailyPractice
+  944  ls
+  945  cd DevopsDailyPractice/
+  946  ls
+  947  vi git.txt
+  948  cat  git.txt
+  949  git add .
+  950  git init
+  951  git commit -m "day 1 git added"
+  952  git status
+  953  git add .
+  954  git status
+  955  git commit -m "day 1 git added"
+  956  git remote add origin https://github.com/KambamSindhu/DevOpsChallengePractice.git
+  957  git push origin master
+  958  ls
+  959  echo $PATH
+  960  which python
+  961  which python3
+  962  which java
+  963  where echo
+  964  which echo
+  965  ls -a
+  966  cat .bash_history
+  967  ls
+  968  ls -a
+  969  cat .bash_profile
+  970  cat .cshrc
+  971  ls -a
+  972  cat .pki
+  973  cat /etc/bashrc
+  974  ls -a
+  975  cat .cshr
+  976  cat .cshrc
+  977  cat .bash_profile
+  978  echo $PATH
+  979  pwd
+  980  ls
+  981  ls -a
+  982  ls -l
+  983  ls -al
+  984  cd my-app
+  985  ls
+  986  open .
+  987  cd ..
+  988  ksakdfl
+  989  ls
+  990  history
+  991  open .
+  992  open ..
+  993  cd my-app
+  994  open .
+  995  open ..
+  996  cd ..
+  997  ls
+  998  ls -R
+  999  clear
+ 1000  cat first.txt
+ 1001  ls
+ 1002  cd devops
+ 1003  ls
+ 1004  mkdir linux
+ 1005  ls
+ 1006  cd linux/
+
+./my-appabc/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile:
+createdFiles.lst  inputFiles.lst
+
+./my-appabc/target/surefire-reports:
+com.mycompany.app.AppTest.txt  TEST-com.mycompany.app.AppTest.xml
+
+./my-appabc/target/test-classes:
+com
+
+./my-appabc/target/test-classes/com:
+mycompany
+
+./my-appabc/target/test-classes/com/mycompany:
+app
+
+./my-appabc/target/test-classes/com/mycompany/app:
+AppTest.class
+
+./project:
+1  3             example.txt  first.txt  roll.txt
+2  example2.txt  FETCH_HEAD   hotel.txt  sddf.txt
+[root@centos ~]# clear
+[root@centos ~]# cat first.txt
+cat: first.txt: No such file or directory
+[root@centos ~]# ls
+agent                    docker        project
+anaconda-ks.cfg          Dockerfile    run-docker.sh
+app                      edureka       run.sh
+bin                      env.sh        settings.xml
+com.vogella.maven.first  externals     sonarqube-9.4.0.54424.zip
+config.sh                jfrog         tmp.txt
+demoterraform            license.html  vsts-agent-linux-x64-3.218.0.tar.gz
+devops                   my-app        vsts-agent-linux-x64-3.218.0.tar.gz.1
+DevopsDailyPractice      my-appabc
+[root@centos ~]# cd d
+demoterraform/ devops/        docker/
+[root@centos ~]# cd devops
+[root@centos devops]# ls
+git  gitclone
+[root@centos devops]# mkdir linux
+[root@centos devops]# ls
+git  gitclone  linux
+[root@centos devops]# cd linux/
+[root@centos linux]# touch first.txt second.txt
+[root@centos linux]# cat first.txt second.txt > third.txt
+[root@centos linux]# ls
+first.txt  second.txt  third.txt
+[root@centos linux]# echo "hello world" >file.txt
+[root@centos linux]# cat file.txt
+hello world
+[root@centos linux]#
+[root@centos linux]# mkdir -p  random/mid/hello
+[root@centos linux]# ls
+file.txt  first.txt  random  second.txt  test  third.txt  upper.txt
+[root@centos linux]# cd random/
+[root@centos random]# cd mid/
+[root@centos mid]# ls
+hello
+[root@centos mid]# cd ..
+[root@centos random]# ls
+hello  mid
+[root@centos random]# cd ..
+[root@centos linux]# cd random/
+[root@centos random]# ls
+hello  mid
+[root@centos random]# cd hello/
+[root@centos hello]# touch first.txt
+[root@centos hello]# ls
+first.txt
+[root@centos hello]# cd ..
+[root@centos random]# cd ..
+[root@centos linux]# mkdir -p random/mid/hello
+[root@centos linux]# cd random/
+[root@centos random]# cd mid/
+[root@centos mid]# ls
+hello
+[root@centos mid]# cd hello/
+[root@centos hello]# ls
+[root@centos hello]# cd hello
+-bash: cd: hello: No such file or directory
+[root@centos hello]# cd ..
+[root@centos mid]# ls
+hello
+[root@centos mid]# cd hello/
+[root@centos hello]# ls
+[root@centos hello]# cd ..
+[root@centos mid]# cd ..
+[root@centos random]# cd ..
+[root@centos linux]# ls
+file.txt  first.txt  random  second.txt  test  third.txt  upper.txt
+[root@centos linux]# touch random/house.txt
+[root@centos linux]# cd random/
+[root@centos random]# ls
+hello  house.txt  mid
+[root@centos random]# cp house.txt h2.txt
+[root@centos random]# ls
+h2.txt  hello  house.txt  mid
+[root@centos random]# cd ..
+[root@centos linux]# ls
+file.txt  first.txt  random  second.txt  test  third.txt  upper.txt
+[root@centos linux]# mv file.txt random
+[root@centos linux]# cd random/
+[root@centos random]# ls
+file.txt  h2.txt  hello  house.txt  mid
+[root@centos random]# cd ..
+[root@centos linux]# ls
+first.txt  random  second.txt  test  third.txt  upper.txt
+[root@centos linux]# mv first.txt fir.txt
+[root@centos linux]# ls
+fir.txt  random  second.txt  test  third.txt  upper.txt
+[root@centos linux]# cd random/
+[root@centos random]# ls
+file.txt  h2.txt  hello  house.txt  mid
+[root@centos random]# vi house.txt
+[root@centos random]# mv house.txt ../newhouse.txt
+[root@centos random]# cd ..
+[root@centos linux]# ls
+fir.txt  newhouse.txt  random  second.txt  test  third.txt  upper.txt
+[root@centos linux]# cat newhouse.txt
+i am house
+[root@centos linux]# cp -R random test
+[root@centos linux]# cd test
+[root@centos test]# ls
+random
+[root@centos test]# cd random
+[root@centos random]# ls
+file.txt  h2.txt  hello  mid
+[root@centos random]# cd ..
+[root@centos test]# cd ..
+[root@centos linux]# mkdir move
+[root@centos linux]# mv -R random move
+mv: invalid option -- 'R'
+Try 'mv --help' for more information.
+[root@centos linux]# mv  random move
+[root@centos linux]# ls
+fir.txt  move  newhouse.txt  second.txt  test  third.txt  upper.txt
+[root@centos linux]# mv move/fir.txt .
+mv: cannot stat ‘move/fir.txt’: No such file or directory
+[root@centos linux]# cd move
+[root@centos move]# ls
+random
+[root@centos move]# cd random
+[root@centos random]# ls
+file.txt  h2.txt  hello  mid
+[root@centos random]# cd ..
+[root@centos move]# mv random/h2.txt .
+[root@centos move]# ls
+h2.txt  random
+[root@centos move]# cd random/
+[root@centos random]# ls
+file.txt  hello  mid
+[root@centos random]# rm file.txt
+rm: remove regular file ‘file.txt’?
+[root@centos random]# ls
+file.txt  hello  mid
+[root@centos random]# rm file.txt
+rm: remove regular file ‘file.txt’? Y
+[root@centos random]# ls
+hello  mid
+[root@centos random]# df
+Filesystem              1K-blocks     Used Available Use% Mounted on
+devtmpfs                  5024788        0   5024788   0% /dev
+tmpfs                     5036668       28   5036640   1% /dev/shm
+tmpfs                     5036668     8796   5027872   1% /run
+tmpfs                     5036668        0   5036668   0% /sys/fs/cgroup
+/dev/mapper/centos-root  52403200 14557388  37845812  28% /
+/dev/sda1                 1038336   198728    839608  20% /boot
+/dev/mapper/centos-home 150978532   864564 150113968   1% /home
+tmpfs                     1007336        0   1007336   0% /run/user/0
+[root@centos random]# df -m
+Filesystem              1M-blocks  Used Available Use% Mounted on
+devtmpfs                     4908     0      4908   0% /dev
+tmpfs                        4919     1      4919   1% /dev/shm
+tmpfs                        4919     9      4911   1% /run
+tmpfs                        4919     0      4919   0% /sys/fs/cgroup
+/dev/mapper/centos-root     51175 14217     36959  28% /
+/dev/sda1                    1014   195       820  20% /boot
+/dev/mapper/centos-home    147440   845    146596   1% /home
+tmpfs                         984     0       984   0% /run/user/0
+[root@centos random]# df -hg
+df: invalid option -- 'g'
+Try 'df --help' for more information.
+[root@centos random]# df -h
+Filesystem               Size  Used Avail Use% Mounted on
+devtmpfs                 4.8G     0  4.8G   0% /dev
+tmpfs                    4.9G   28K  4.9G   1% /dev/shm
+tmpfs                    4.9G  8.6M  4.8G   1% /run
+tmpfs                    4.9G     0  4.9G   0% /sys/fs/cgroup
+/dev/mapper/centos-root   50G   14G   37G  28% /
+/dev/sda1               1014M  195M  820M  20% /boot
+/dev/mapper/centos-home  144G  845M  144G   1% /home
+tmpfs                    984M     0  984M   0% /run/user/0
+[root@centos random]# du
+0       ./hello
+0       ./mid/hello
+0       ./mid
+0       .
+[root@centos random]# du -l
+0       ./hello
+0       ./mid/hello
+0       ./mid
+0       .
+[root@centos random]# du -h
+0       ./hello
+0       ./mid/hello
+0       ./mid
+0       .
+[root@centos random]# cd ..
+[root@centos move]# cd ..
+[root@centos linux]# ls
+fir.txt  move  newhouse.txt  second.txt  test  third.txt  upper.txt
+[root@centos linux]# vi fir.txt
+[root@centos linux]# head fir.txt
+adf
+sdfg
+dfgn
+asdfgh
+sdfghjk
+sadfghj
+asdfghj
+ewrtyu
+dsfghjkl
+[root@centos linux]# locate random'
+> exit()
+> ^C
+[root@centos linux]# cd ..
+[root@centos devops]# locate fir.txt
+-bash: locate: command not found
+[root@centos devops]# locate "fir.txt"
+-bash: locate: command not found
+[root@centos devops]# man locate
+No manual entry for locate
+[root@centos devops]# cd ..
+[root@centos ~]# cd d
+-bash: cd: d: No such file or directory
+[root@centos ~]# cd d
+demoterraform/ devops/        docker/
+[root@centos ~]# cd devops/
+[root@centos devops]# cd linux/
+[root@centos linux]# ls
+fir.txt  move  newhouse.txt  second.txt  test  third.txt  upper.txt
+[root@centos linux]# find . -name "f*"
+./test/random/hello/first.txt
+./test/random/file.txt
+./move/random/hello/first.txt
+./fir.txt
+[root@centos linux]# find . -type f -mmin 2
+[root@centos linux]# find . -type f -mmin 200
+[root@centos linux]# find . -type f -mmin +200
+[root@centos linux]# find . -type f -mmin +20
+./second.txt
+./third.txt
+./upper.txt
+./move/random/hello/first.txt
+./move/h2.txt
+[root@centos linux]# find . -type f -mtime +20
+[root@centos linux]# find . -type f -mtime +1
+[root@centos linux]# find . -type f -mtime -1
+./second.txt
+./third.txt
+./upper.txt
+./test/random/hello/first.txt
+./test/random/h2.txt
+./test/random/file.txt
+./newhouse.txt
+./move/random/hello/first.txt
+./move/h2.txt
+./fir.txt
+[root@centos linux]# find . -size +1k
+[root@centos linux]# find . -size -1k
+./second.txt
+./third.txt
+./test/random/hello/first.txt
+./test/random/h2.txt
+./move/random/hello/first.txt
+./move/h2.txt
+[root@centos linux]# find . -size -1k -maxdepth 1
+find: warning: you have specified the -maxdepth option after a non-option argument -size, but options are not positional (-maxdepth affects tests specified before it as well as those specified after it).  Please specify options before other arguments.
+
+./second.txt
+./third.txt
+[root@centos linux]# find . -size -1k
+./second.txt
+./third.txt
+./test/random/hello/first.txt
+./test/random/h2.txt
+./move/random/hello/first.txt
+./move/h2.txt
+[root@centos linux]# find . -size -1k -maxdepth 2
+find: warning: you have specified the -maxdepth option after a non-option argument -size, but options are not positional (-maxdepth affects tests specified before it as well as those specified after it).  Please specify options before other arguments.
+
+./second.txt
+./third.txt
+./move/h2.txt
+[root@centos linux]# find . -empty
+./second.txt
+./third.txt
+./test/random/hello/first.txt
+./test/random/mid/hello
+./test/random/h2.txt
+./move/random/hello/first.txt
+./move/random/mid/hello
+./move/h2.txt
+[root@centos linux]#
