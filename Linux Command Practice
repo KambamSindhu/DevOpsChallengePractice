@@ -477,5 +477,272 @@ uid=0(root) gid=0(root) groups=0(root),993(docker) context=unconfined_u:unconfin
 [root@centos linux]#  -g
 -bash: -g: command not found
 [root@centos linux]#
+oot@centos ~]# getent group Kambamsindhu
+[root@centos ~]# getent group User
+[root@centos ~]# id
+uid=0(root) gid=0(root) groups=0(root),993(docker) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+[root@centos ~]# id -g
+0
+[root@centos ~]# id -G
+0 993
+[root@centos ~]# id -r
+id: cannot print only names or real IDs in default format
+[root@centos ~]# getent group User
+[root@centos ~]# id kambamsindhu
+uid=1000(kambamsindhu) gid=1000(kambamsindhu) groups=1000(kambamsindhu)
+[root@centos ~]# lsof
+-bash: lsof: command not found
+[root@centos ~]# ls of
+ls: cannot access of: No such file or directory
+[root@centos ~]# nslookup google.com
+-bash: nslookup: command not found
+[root@centos ~]#  netstat
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 localhost:postgres      localhost:43902         ESTABLISHED
+tcp        0      0 localhost:postgres      localhost:43882         ESTABLISHED
+tcp        0      0 localhost:postgres      localhost:43874         ESTABLISHED
+tcp        0     64 centos:ssh              192.168.56.110:58262    ESTABLISHED
+tcp        0      0 localhost:postgres      localhost:43900         ESTABLISHED
+tcp        0      0 localhost:32000         localhost:31000         ESTABLISHED
+tcp        0      0 localhost:postgres      localhost:43878         ESTABLISHED
+tcp        0      0 localhost:postgres      localhost:43872         ESTABLISHED
+tcp        0      0 localhost:postgres      localhost:43904         ESTABLISHED
+tcp6       0      0 localhost:43900         localhost:postgres      ESTABLISHED
+tcp6       0      0 localhost:43872         localhost:postgres      ESTABLISHED
+tcp6       0      0 localhost:43878         localhost:postgres      ESTABLISHED
+tcp6       0      0 localhost:43874         localhost:postgres      ESTABLISHED
+tcp6       0      0 localhost:43882         localhost:postgres      ESTABLISHED
+tcp6       0      0 localhost:37074         localhost:etlservicemgr ESTABLISHED
+tcp6       0      0 localhost:43904         localhost:postgres      ESTABLISHED
+tcp6       0      0 localhost:31000         localhost:32000         ESTABLISHED
+tcp6       0      0 localhost:43902         localhost:postgres      ESTABLISHED
+tcp6       0      0 localhost:etlservicemgr localhost:37074         ESTABLISHED
+udp        0      0 centos:44314            ntp-mumbai.gombadi.:ntp ESTABLISHED
+udp6       0      0 localhost:55213         localhost:55213         ESTABLISHED
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  3      [ ]         DGRAM                    7455     /run/systemd/notify
+unix  2      [ ]         DGRAM                    7457     /run/systemd/cgroups-agent
+unix  5      [ ]         DGRAM                    7478     /run/systemd/journal/socket
+unix  16     [ ]         DGRAM                    7480     /dev/log
+unix  2      [ ]         DGRAM                    13527    /run/systemd/shutdownd
+unix  2      [ ]         DGRAM                    20714    /var/run/chrony/chronyd.sock
+unix  3      [ ]         STREAM     CONNECTED     27207
+unix  2      [ ]         STREAM     CONNECTED     27518
+unix  3      [ ]         STREAM     CONNECTED     27180
+unix  3      [ ]         STREAM     CONNECTED     15722    /run/systemd/journal/stdout
+unix  2      [ ]         STREAM     CONNECTED     28780
+unix  3      [ ]         STREAM     CONNECTED     27160
+unix  3      [ ]         STREAM     CONNECTED     26862    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27542    /run/containerd/containerd.sock
+unix  3      [ ]         STREAM     CONNECTED     27198
+unix  3      [ ]         STREAM     CONNECTED     30364    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     27184
+unix  3      [ ]         STREAM     CONNECTED     28051    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     21883    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     21635
+unix  3      [ ]         STREAM     CONNECTED     21646    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27172
+unix  3      [ ]         STREAM     CONNECTED     15721
+unix  3      [ ]         STREAM     CONNECTED     30549    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27186
+unix  2      [ ]         DGRAM                    27235
+unix  3      [ ]         STREAM     CONNECTED     27168
+unix  3      [ ]         STREAM     CONNECTED     21882
+unix  3      [ ]         STREAM     CONNECTED     27155
+unix  2      [ ]         DGRAM                    23189
+unix  3      [ ]         STREAM     CONNECTED     22108
+unix  3      [ ]         STREAM     CONNECTED     30183
+unix  3      [ ]         STREAM     CONNECTED     20658
+unix  2      [ ]         STREAM     CONNECTED     27313
+unix  3      [ ]         STREAM     CONNECTED     27211
+unix  3      [ ]         STREAM     CONNECTED     27190
+unix  3      [ ]         STREAM     CONNECTED     20567
+unix  3      [ ]         STREAM     CONNECTED     21677
+unix  3      [ ]         STREAM     CONNECTED     25487    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     22674    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     27148
+unix  2      [ ]         DGRAM                    22081
+unix  2      [ ]         STREAM     CONNECTED     28693
+unix  3      [ ]         STREAM     CONNECTED     25495    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    22270
+unix  3      [ ]         STREAM     CONNECTED     27208
+unix  3      [ ]         STREAM     CONNECTED     27195
+unix  2      [ ]         STREAM     CONNECTED     28786
+unix  2      [ ]         DGRAM                    30353
+unix  2      [ ]         DGRAM                    27119
+unix  2      [ ]         DGRAM                    25620
+unix  2      [ ]         STREAM     CONNECTED     27552
+unix  3      [ ]         STREAM     CONNECTED     20754
+unix  3      [ ]         STREAM     CONNECTED     27204
+unix  3      [ ]         STREAM     CONNECTED     27199
+unix  2      [ ]         DGRAM                    30557
+unix  3      [ ]         STREAM     CONNECTED     27183
+unix  3      [ ]         STREAM     CONNECTED     25599
+unix  3      [ ]         STREAM     CONNECTED     27169
+unix  2      [ ]         DGRAM                    21708
+unix  3      [ ]         STREAM     CONNECTED     27171
+unix  3      [ ]         STREAM     CONNECTED     27187
+unix  3      [ ]         STREAM     CONNECTED     27152
+unix  2      [ ]         DGRAM                    19317
+unix  3      [ ]         STREAM     CONNECTED     27165
+unix  3      [ ]         STREAM     CONNECTED     24665
+unix  3      [ ]         STREAM     CONNECTED     22673
+unix  3      [ ]         STREAM     CONNECTED     27175
+unix  3      [ ]         STREAM     CONNECTED     27149
+unix  3      [ ]         STREAM     CONNECTED     27146
+unix  3      [ ]         STREAM     CONNECTED     27205
+unix  3      [ ]         STREAM     CONNECTED     27196
+unix  3      [ ]         STREAM     CONNECTED     20661    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    30367
+unix  2      [ ]         DGRAM                    22663
+unix  2      [ ]         DGRAM                    20685
+unix  3      [ ]         STREAM     CONNECTED     27162
+unix  3      [ ]         STREAM     CONNECTED     27145
+unix  3      [ ]         STREAM     CONNECTED     27201
+unix  2      [ ]         DGRAM                    31189
+unix  3      [ ]         STREAM     CONNECTED     16121
+unix  2      [ ]         STREAM     CONNECTED     27615
+unix  2      [ ]         DGRAM                    30795
+unix  3      [ ]         STREAM     CONNECTED     27153
+unix  3      [ ]         STREAM     CONNECTED     27174
+unix  3      [ ]         STREAM     CONNECTED     20756    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     27213
+unix  3      [ ]         STREAM     CONNECTED     27216
+unix  3      [ ]         STREAM     CONNECTED     25706
+unix  3      [ ]         STREAM     CONNECTED     27546    /run/containerd/containerd.sock
+unix  3      [ ]         STREAM     CONNECTED     22109    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     27178
+unix  3      [ ]         DGRAM                    16426
+unix  3      [ ]         STREAM     CONNECTED     27307
+unix  3      [ ]         STREAM     CONNECTED     27192
+unix  3      [ ]         STREAM     CONNECTED     27166
+unix  3      [ ]         STREAM     CONNECTED     25486    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     19327
+unix  2      [ ]         STREAM     CONNECTED     28013
+unix  3      [ ]         STREAM     CONNECTED     24895
+unix  3      [ ]         STREAM     CONNECTED     25600    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27163
+unix  2      [ ]         STREAM     CONNECTED     27449
+unix  3      [ ]         STREAM     CONNECTED     27181
+unix  3      [ ]         DGRAM                    16425
+unix  3      [ ]         STREAM     CONNECTED     30363
+unix  3      [ ]         STREAM     CONNECTED     26860
+unix  3      [ ]         STREAM     CONNECTED     22042
+unix  3      [ ]         STREAM     CONNECTED     28050
+unix  3      [ ]         STREAM     CONNECTED     27159
+unix  3      [ ]         STREAM     CONNECTED     27541
+unix  3      [ ]         STREAM     CONNECTED     27202
+unix  2      [ ]         DGRAM                    16130
+unix  3      [ ]         STREAM     CONNECTED     19326
+unix  3      [ ]         STREAM     CONNECTED     20755
+unix  2      [ ]         DGRAM                    21724
+unix  3      [ ]         STREAM     CONNECTED     27156
+unix  3      [ ]         STREAM     CONNECTED     25716    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    30969
+unix  3      [ ]         STREAM     CONNECTED     27214
+unix  3      [ ]         STREAM     CONNECTED     27189
+unix  3      [ ]         STREAM     CONNECTED     27217
+unix  3      [ ]         STREAM     CONNECTED     27545
+unix  3      [ ]         STREAM     CONNECTED     22044    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     21678    /run/dbus/system_bus_socket
+unix  2      [ ]         STREAM     CONNECTED     28701
+unix  3      [ ]         STREAM     CONNECTED     24611
+unix  3      [ ]         STREAM     CONNECTED     27177
+unix  3      [ ]         STREAM     CONNECTED     16123    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27308    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     27210
+unix  3      [ ]         STREAM     CONNECTED     27193
+[root@centos ~]# ls
+agent                    docker        project
+anaconda-ks.cfg          Dockerfile    run-docker.sh
+app                      edureka       run.sh
+bin                      env.sh        settings.xml
+com.vogella.maven.first  externals     sonarqube-9.4.0.54424.zip
+config.sh                jfrog         tmp.txt
+demoterraform            license.html  vsts-agent-linux-x64-3.218.0.tar.gz
+devops                   my-app        vsts-agent-linux-x64-3.218.0.tar.gz.1
+DevopsDailyPractice      my-appabc
+[root@centos ~]# cd devops/
+[root@centos devops]# ls
+git  gitclone  linux
+[root@centos devops]# cd linux/
+[root@centos linux]# ls
+fir.txt  move  newhouse.txt  test  third.txt  upper.txt
+[root@centos linux]# cd move/
+[root@centos move]# ls
+h2.txt  random
+[root@centos move]# cd random/
+[root@centos random]# ls
+hello  mid
+[root@centos random]# cat hello/
+cat: hello/: Is a directory
+[root@centos random]# cd hello/
+[root@centos hello]# ls
+first.txt
+[root@centos hello]# cat first.txt
+[root@centos hello]# cd ..
+[root@centos random]# cd mid/
+[root@centos mid]# ls
+hello
+[root@centos mid]# cd hello/
+[root@centos hello]# ls
+[root@centos hello]# cd ..
+[root@centos mid]# cd ..
+[root@centos random]# ls
+hello  mid
+[root@centos random]# cd ..
+[root@centos move]# ls
+h2.txt  random
+[root@centos move]# cd random/
+[root@centos random]# ls
+hello  mid
+[root@centos random]# cd hello/
+[root@centos hello]# ls
+first.txt
+[root@centos hello]# cat first.txt
+[root@centos hello]# cd ..\
+> ^C
+[root@centos hello]# vi first.txt
+[root@centos hello]# ls
+first.txt
+[root@centos hello]# cut -c 1-2 first.txt
+df
+df
+sf
+sa
+[root@centos hello]# cut -r 1-2 first.txt
+cut: invalid option -- 'r'
+Try 'cut --help' for more information.
+[root@centos hello]# cd
+[root@centos ~]# ping google.com && ping commclassroom.org
+PING google.com (172.217.163.174) 56(84) bytes of data.
+64 bytes from maa05s05-in-f14.1e100.net (172.217.163.174): icmp_seq=1 ttl=113 time=36.7 ms
+64 bytes from maa05s05-in-f14.1e100.net (172.217.163.174): icmp_seq=2 ttl=113 time=60.1 ms
+64 bytes from maa05s05-in-f14.1e100.net (172.217.163.174): icmp_seq=3 ttl=113 time=37.7 ms
+64 bytes from maa05s05-in-f14.1e100.net (172.217.163.174): icmp_seq=4 ttl=113 time=39.7 ms
+^C
+--- google.com ping statistics ---
+5 packets transmitted, 4 received, 20% packet loss, time 4008ms
+rtt min/avg/max/mdev = 36.733/43.599/60.136/9.611 ms
+PING commclassroom.org (69.16.230.42) 56(84) bytes of data.
+64 bytes from lb01.parklogic.com (69.16.230.42): icmp_seq=1 ttl=48 time=307 ms
+64 bytes from lb01.parklogic.com (69.16.230.42): icmp_seq=2 ttl=48 time=428 ms
+^C
+--- commclassroom.org ping statistics ---
+3 packets transmitted, 2 received, 33% packet loss, time 2004ms
+rtt min/avg/max/mdev = 307.459/367.753/428.048/60.297 ms
+[root@centos ~]# echo "first" || echo "second"
+first
+[root@centos ~]# echo "first" && echo "second"
+first
+second
+[root@centos ~]# irst" && echo "second"
+> ^C
+[root@centos ~]# echo "first" !(echo "second")
+-bash: !: event not found
+[root@centos ~]#
+
 
 
