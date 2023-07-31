@@ -1,7 +1,6 @@
 DAY 1
 Git Fundamentals pract
 
-[root@centos ~]# ls
 agent                    docker        my-appabc
 anaconda-ks.cfg          Dockerfile    run-docker.sh
 app                      edureka       run.sh
