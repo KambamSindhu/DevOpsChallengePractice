@@ -1,5 +1,4 @@
 
-[root@centos ~]# ls
 agent                    docker        project
 anaconda-ks.cfg          Dockerfile    run-docker.sh
 app                      edureka       run.sh
