@@ -1,6 +1,4 @@
 
-
-//Missed taking the scrren shot
  939  vi example2.txt
   940  cat example2.txt
   941  cd
