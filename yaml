@@ -162,6 +162,47 @@ person3:
   name : dsdf
   fav fruit: mango
   dislikes : grapes
+ #REAL WORLD EXAMPLES
+ #school.xml
+<?xml verson="1.0" encoding="UTF-8"?>
+<School name="DPS" principal="Abc">
+  <Student>
+    <Students>
+        <rno>23</rno>
+        <name>"Kunal"</name>
+        <marks>94</marks>
+    <Students>
+  <Student>
+</School>
+#school.json
+{
+    "school": [
+        {
+        "name" : "DPS",
+        "principal" : "abc",
+        "Students" :  [
+            {
+                "rno" : 12,
+                "name" : "kunal kushava",
+                "marks" : 94
+            }
+
+        ]
+        }
+    ]
+}
+#school.yml
+---
+School :
+- name : DPS
+  principal : abc
+  Students :
+  - rno : 12
+    name : Kunal KAshawa
+    marks : 56
+...
+
+
 
 
 
