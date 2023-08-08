@@ -1,5 +1,4 @@
  cd dockerprac/
-  867  ;s
   868  ls
   869  docker images
   870  docker rmi $(docker images -q)
