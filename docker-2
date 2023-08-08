@@ -1,0 +1,127 @@
+ cd dockerprac/
+  867  ;s
+  868  ls
+  869  docker images
+  870  docker rmi $(docker images -q)
+  871  docker rmi -f $(docker images -q)
+  872  docker images
+  873  docker rm -f $(docker ps -a -q)
+  874  docker ps
+  875  cd ..
+  876  docker ps
+  877  cd dockerprac
+  878  l
+  879  docker run -it -d ubuntu
+  880  docker logs 7d9879e2df78df1ce4ebeb94a8ea1ded29096990499ba05bef464fc5ec2e2069
+  881  docker exec -it 7d9879e2df78df1ce4ebeb94a8ea1ded29096990499ba05bef464fc5ec2e2069 bash
+  882  sudo docker ps
+  883  docker commit 7d9879e2df78 kambamsindhu/apache
+  884  docker images
+  885  sudo docker ps
+  886  docker rm -f 7d9879e2df78
+  887  docker run -it -d kambamsindhu/apache
+  888  docker run -it -d -p 82:80  kambamsindhu/apache
+  889  docker ps
+  890  docker exec -it eac2c787d32b bash
+  891  docker ps
+  892  docker stop eac2c787d32b
+  893  docker history
+  894  history
+  895  docker login
+  896  ls
+  897  cd  dockerprac
+  898  ls
+  899  docker images
+  900  docker push kambamsindhu/apache
+  901  ls
+  902  vi Dockerfile
+  903  mkdir dockerfile
+  904  cd dockerfile/
+  905  ls
+  906  vi Dockerfile
+  907  vi 1.html
+  908  cat 1.html
+  909  cat Dockerfile
+  910  docker build . -t new-dockerfile
+  911  vi Dockerfile
+  912  docker build . -t new-dockerfile
+  913  docker images
+  914  docker build myimage .
+  915  docker build -t myimage .
+  916  docker images
+  917  docker rm new-dockerfile
+  918  docker rmi new-dockerfile
+  919  docker run -d  myimage
+  920  docker ps
+  921  docker run -d  myimage -t myimagecontainer
+  922  docker ps
+  923  docker rm -f  myimage
+  924  docker rm -f 435d65533fce
+  925  docker rm -f 8b6cc91fa0a9
+  926  docker run -it -d -p 82:80 myimage
+  927  docker ps
+  928  docker exec -it 3a4f86cecfe1 bash
+  929  docker volume create test
+  930  clear
+  931  docker run -it --mount source=test,target=/app -d ubuntu
+  932  docker exec -it fbbf5b0d628498e52a8f23d2af592cc7ea40915239fbd50968c83af9364d821e
+  933  docker exec -it fbbf5b0d628498e52a8f23d2af592cc7ea40915239fbd50968c83af9364d821e bashexit
+  934  ls
+  935  docker volume ls
+  936  docker run -it --mount source=test,target=/app -d ubuntu
+  937  docker ps
+  938  docker run -it --mount source=test,target=/app -d myimage
+  939  docker exec -it d9d948c7a11ad87e485c72ea1c8dddc5b188434e7ad5dcfcf20a20b0b29d15a5  bash
+  940  ls
+  941  docker run -it --mount source=test,target=/app -d ubuntu
+  942  docker exec -it b6b65903ded076bed21 bash
+  943  docker volume apache
+  944  docker volume create  apache
+  945  clear
+  946  docker run -it --mount source=apache,target=/www/html -d ubuntu
+  947  docker exec -it fadb39710eeb8f840 bash
+  948  ls
+  949  cd dockerprac/
+  950  clear
+  951  ls
+  952  docker volume create voulmeprac
+  953  docker volume ls
+  954  docker images
+  955  docker ps
+  956  docker rm -f   ubuntu
+  957  docker rm -f   fadb39710eeb
+  958  docker rm -f b6b65903ded0
+  959  docker rm -f 65c37f20697a
+  960  docker rm -f fbbf5b0d6284
+  961  docker ps
+  962  docker images
+  963  ls
+  964  mkdir voulmes
+  965  cd voulmes/
+  966  ls
+  967  touch 1.html
+  968  touch 2.html
+  969  ls
+  970  docker run -it --mount source=voulmeprac,target=/app kambamsindhu/apache
+  971  docker run -it --mount source=voulmeprac,target=/app -p 84:80 -d  kambamsindhu/apache
+  972  docker ps
+  973  docker run -it --mount source=voulmeprac,target=/app kambamsindhu/apache
+  974  ls
+  975  cd ..
+  976  ls
+  977  cd dockerprac
+  978  ls
+  979  cd dockerfile
+  980  ls
+  981  cd ..
+  982  cd prac
+  983  mkdir p
+  984  cd p
+  985  clear
+  986  docker volume create testp
+  987  docker volume ls tail
+  988  docker volume ls
+  989  docker run -it --mount source=testp,target=/app -d ubuntu
+  990  docker exec -it ffabb563b97 bash
+  991  ls
+  992  history
