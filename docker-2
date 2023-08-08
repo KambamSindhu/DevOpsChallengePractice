@@ -125,3 +125,20 @@
   990  docker exec -it ffabb563b97 bash
   991  ls
   992  history
+993  docker swarn init --advertise-addr 192.168.56.111
+  994  docker swarm init --advertise-addr 192.168.56.111
+  995  docker info
+  996   docker swarm join --token SWMTKN-1-3j9bt4cwa8cd5xbc2zy7ulo7lbllcx6gces7t5gbyrtq4skdsz-3ajdwjpzbxlz22wz2x69p9t76 192.168.56.111:2377
+  997  docker info
+  998  docker nodes ls
+  999  docker node ls
+ 1000  docker swarm leave
+ 1001  docker swarm leave  --forcw
+ 1002  docker swarm leave  --force
+ 1003  docker node ls
+ 1004  docker swarm init --advertise-addr 192.168.56.111
+ 1005  docker node ls
+ 1006  docker node rm 92fagz2fbwpn4afz82wechft
+ 1007  docker node rm -f  92fagz2fbwpn4afz82wechft
+ 1008  docker node ls
+ 1009  history
