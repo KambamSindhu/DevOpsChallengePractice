@@ -1,0 +1,80 @@
+cat sample.yml
+---
+- name: Apache Book
+  hosts: webservers
+  remote_user: root
+  become: true
+  tasks:
+    - name: check if apache is installed
+      stat:
+           path: /usr/sbin/httpd
+      register: apache_check
+    - name: install httpd
+      yum:
+          name: httpd
+          state: latest
+      when: apache_check.stat.exists == False
+    - name: run install
+      service:
+               name: httpd
+               state: started
+    - name: create content
+      copy:
+            content: "Installation of Apache is completed"
+            dest: /var/www/html/index.html
+      notify:
+         - Restart Apache
+  handlers:
+      - name: Restart Apache
+        service:
+                name: httpd
+                state: restarted
+
+######################################################################
+//SAMPLE COMMANDS
+  993  yum install ansible
+  994  ssh-keygen
+  995  sudo ssh -i /root/.ssh/id_rsa.pub root@192.168.56.124
+  996  sudo ssh -i /root/.ssh/id_rsa root@192.168.56.124
+  997  cd /etc/ansible/hosts
+  998  cd /etc/ansible
+  999  ls
+ 1000  vi hosts
+ 1001  vi sample.yml
+ 1002  cat sample.yml
+ 1003  pwd
+ 1004  ls
+ 1005  rm -rf sample.yml
+ 1006  cd
+ 1007  vi sample.yml
+ 1008  ansible-playbook sample.ym syntax-check
+ 1009  ansible-playbook sample.yml syntax-check
+ 1010  ls
+ 1011  ansible --version
+ 1012  ansible-playbook sample.yml --syntax-check
+ 1013  vi sample.yml
+ 1014  ansible-playbook sample.yml --syntax-check
+ 1015  cd /etc/ansible
+ 1016  ls
+ 1017  cat hosts
+ 1018  cd
+ 1019  ansible-playbook sample.yml --syntax-check
+ 1020  cd /etc/ansible
+ 1021  ls
+ 1022  vi hosts
+ 1023  cd
+ 1024  ansible-playbook sample.yml --syntax-check
+ 1025  ansible-playbook sample.yml
+ 1026  cd /etc/ansible
+ 1027  ls
+ 1028  cd hosts
+ 1029  vi hosts
+ 1030  cd
+ 1031  ansible-playbook sample.yml
+ 1032  cd /etc/ansible
+ 1033  vi hosts
+ 1034  ansible-playbook sample.yml
+ 1035  cd
+ 1036  ansible-playbook sample.yml
+ 1037  history
+
